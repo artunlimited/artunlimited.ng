@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="Yellowstone">
+
+        <link href="img/artunlimited_logo-removebg-preview.png" rel="icon">
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/magnific-popup.css" rel="stylesheet">
+
+        <link href="css/yellow-stone.css" rel="stylesheet">
+        
+        
+    </head>
+    
+    <body id="section_1">
+        <header class="site-header">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-3 col-md-5 col-7">
+                        <p class="text-white mb-0">
+                            <i class="bi-envelope site-header-icon me-2"></i>
+                            artunlimitedng@gmail.com
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <p class="text-white mb-0">
+                            <a href="tel: +234 803 912 9669" class="text-white">
+                                <i class="bi-telephone site-header-icon me-2"></i>
+                                +234 803 912 9669
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12 ms-auto">
+                        <ul class="social-icon">
+                            <li><a href="https://www.facebook.com/share/15zKwE5KJu/" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="https://www.instagram.com/artunlimitedng?igsh=MWFrcmx2cm1uZzcwMw==" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="https://youtube.com/@artunlimited_ng?si=tvdl6-SagULxQPIG" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+              <div class="logo">
+                <a href="index.html">
+                  <img src="img/artunlimited_logo-removebg-preview.png" alt="Logo Image" class="logo-image" />
+                </a>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <!-- Home link: Removed "click-scroll" so it navigates normally -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                      <small class="small-title"><strong class="text-warning">01</strong></small> Home
+                    </a>
+                  </li>
+          
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#section_2" onclick="navigateToSection(event, 'section_2')">
+                        <small class="small-title"><strong class="text-warning">02</strong></small> About
+                    </a>
+                </li>
+          
+                  <li class="nav-item">
+                    <a class="nav-link click-scroll" href="index.html#section_3">
+                      <small class="small-title"><strong class="text-warning">03</strong></small> Programmes
+                    </a>
+                  </li>
+          
+                  <li class="nav-item">
+                    <a class="nav-link click-scroll" href="index.html#section_4">
+                      <small class="small-title"><strong class="text-warning">04</strong></small> Projects
+                    </a>
+                  </li>
+          
+                  <li class="nav-item">
+                    <a class="nav-link click-scroll" href="index.html#section_5">
+                      <small class="small-title"><strong class="text-warning">05</strong></small> Contact
+                    </a>
+                  </li>
+          
+                  <li class="nav-item">
+                    <a class="nav-link click-scroll" href="gallery.html">
+                      <small class="small-title"><strong class="text-warning">06</strong></small> Gallery
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <script>
+            function navigateToSection(event, sectionId) {
+                if (window.location.pathname.includes("gallery.html")) {
+                    event.preventDefault(); // Prevent default navigation
+                    window.location.href = "index.html#" + sectionId; // Redirect
+                }
+            }
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Check if the URL contains a hash and scroll to it after page load
+                    if (window.location.hash) {
+                        let targetSection = document.querySelector(window.location.hash);
+                        if (targetSection) {
+                            setTimeout(() => {
+                                targetSection.scrollIntoView({ behavior: "smooth" });
+                            }, 500); // Delay ensures page is fully loaded
+                        }
+                    }
+                
+                    // Handle navigation from other pages (e.g., Gallery → Home)
+                    document.querySelectorAll(".nav-link").forEach(link => {
+                        link.addEventListener("click", function (event) {
+                            let href = this.getAttribute("href");
+                            if (href.includes("index.html#")) {
+                                event.preventDefault(); // Stop default navigation
+                                let sectionId = href.split("#")[1];
+                                window.location.href = "index.html#" + sectionId; // Reload home page with section
+                            }
+                        });
+                    });
+                });
+                </script>
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  // Only run if we're on gallery.html
+                  if (window.location.pathname.endsWith("gallery.html")) {
+                    // Select all nav links and remove any active class
+                    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+                    navLinks.forEach(link => link.classList.remove("active"));
+                    
+                    // Select the Gallery nav link explicitly (by matching href exactly)
+                    const galleryLink = document.querySelector('.navbar-nav .nav-link[href="gallery.html"]');
+                    if (galleryLink) {
+                      galleryLink.classList.add("active");
+                      // Optionally, set focus (remove if not desired)
+                      galleryLink.focus();
+                    }
+                  }
+                });
+                </script>
+                
+                
+        <main>
+            
+
+            <section class="donda-section donda-slide d-flex justify-content-center align-items-center" id="gallerypage">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 text-center mx-auto">
+                            <div class="donda-section-text">
+                                <small class="small-title">Gallery <strong class="text-warning">06/06</strong></small>
+                                <h2>Welcome to our storyboard</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+              
+            <section class="projects section-padding pb-0">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/about.jpg" class="img-fluid projects-image" style="width: 700px; height: 500px;">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/group 2.jpg" class="img-fluid projects-image" style="width: 700px; height: 500px;">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/group 3.jpg"class="img-fluid projects-image"
+                                    alt="Thumbnail Image" style="width: 700px; height: 500px;" object-fit="cover">                                    
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-12">
+                            <div class="projects-thumb projects-thumb-large">
+                                    <img src="img/group 4.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/group 6.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 570px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/class.jpg" class="img-fluid projects-image" style="width: 700px; height: 500px;">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/class 3.jpg" class="img-fluid projects-image" style="width: 700px; height: 500px;">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/class 4.jpg"class="img-fluid projects-image"
+                                    alt="Thumbnail Image" style="width: 700px; height: 500px;" object-fit="cover">                                    
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/IMG_1438.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="projects-thumb projects-thumb-large">
+                                    <img src="img/gallery2.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+                        
+                    
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/DSC_1013.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/class 5.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/DSC_1045.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/win.jpg" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                    <img src="img/winner2.JPG" class="img-fluid projects-image" alt="Thumbnail Image"
+                                    style="width: 700px; height: 500px;" object-fit:"contain">
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            
+
+      
+            <section class="contact" id="section_5">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ED8F4D" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    
+                    <div class="contact-container-wrap">
+                        <div class="container">
+                            <div class="row">
+    
+                                <div class="col-lg-6 col-12">
+                                        <small class="small-title">Contact <strong class="text-white">05/05</strong></small>
+                                        <h2 class="mb-5">Say Hi to us</h2>
+                                </div>
+    
+                                <div class="col-lg-6 col-12">
+                                    <div class="contact-thumb">
+                                        
+                                        <div class="contact-info bg-white shadow-lg">
+                                            <h4 class="mb-4">We'd Love To Hear From You</h4>
+    
+                                            <h4 class="mb-2">
+                                                <a href="tel: 240-480-9600">
+                                                    <i class="bi-telephone contact-icon me-2"></i>
+                                                    +234 807 318 2611
+                                                </a>
+                                            </h4>
+    
+                                            <h5>
+                                                <a href="mailto:artunlimitedng@gmail.com" class="footer-link">
+                                                    <i class="bi-envelope-fill contact-icon me-2"></i>
+                                                    artunlimitedng@gmail.com
+                                                </a>
+                                            </h5>
+    
+                                            <h5>
+                                                <a href="https://wa.me/2348182657665" class="footer-link">
+                                                 <i class="bi-whatsapp contact-icon me-2"></i>
+                                                  +234 818 265 7665
+                                                </a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </section>
+    
+            </main>
+    
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                                        
+                        <div class="col-lg-6 col-12">
+                            <div class="site-footer-wrap d-flex align-items-center">
+                                <p class="copyright-text mb-0 me-4">Copyright © artunlimited.ng</p>
+    
+                                <ul class="social-icon">
+                                    <li><a href="https://www.facebook.com/share/15zKwE5KJu/" class="social-icon-link bi-facebook"></a></li>
+    
+                                    <li><a href="https://www.instagram.com/artunlimitedng?igsh=MWFrcmx2cm1uZzcwMw==" class="social-icon-link bi-instagram"></a></li>
+        
+                                    <li><a href="https://youtube.com/@artunlimited_ng?si=tvdl6-SagULxQPIG" class="social-icon-link bi-youtube"></a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </footer>
+    
+    
+             <!-- Back to top button -->
+             <a id="back-to-top" href="#"<i class="bi bi-chevron-up"></i>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var backToTop = document.getElementById("back-to-top");
+    
+      // Show or hide the button based on scroll position
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      });
+    
+      // Smooth scroll back to the top when clicked
+      backToTop.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    });
+    </script>      
+    
+            <!-- JAVASCRIPT FILES -->
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <script src="js/magnific-popup-options.js"></script>
+            <script src="js/click-scroll.js"></script>
+            <script src="js/custom.js"></script>
+    
+        </body>
+    </html>
